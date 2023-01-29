@@ -5,42 +5,55 @@
   margin: 0;
 }
 .container {
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Lato", sans-serif;
 }
-.flex-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header,
-.placeholder {
-  width: 100vw;
-  height: 10vh;
-}
-header .container {
-  height: 5vh;
-}
+
 header {
-  position: fixed;
+  width: 100vw;
+  /* height: 10vh; */
+}
+#header {
+  position: sticky;
+  top: 0;
   border-bottom: 1px solid black;
   background-color: aliceblue;
 }
+header .container {
+  height: 100%;
+  padding-top: 20px;
+}
+
 header .image-holder {
-  display: block;
-  height: 5vh;
   width: 30%;
+  min-width: 200px;
+  max-width: 300px;
+  height: 50px;
 }
 header img {
   max-width: 100%;
 }
-
+nav {
+  width: 50%;
+  min-width: 400px;
+  height: 100%;
+  float: right;
+  /* vertical-align: center; */
+  /* background-color: aqua; */
+}
 header ul {
+  /* background-color: #f1c40f; */
   list-style: none;
+  float: right;
+}
+header .image-holder,
+nav {
+  display: inline-block;
 }
 
 header ul li {
@@ -49,40 +62,226 @@ header ul li {
   padding-right: 20px;
   font-weight: 600;
 }
+
 header ul li a {
   text-decoration: none;
   text-transform: uppercase;
   color: inherit;
 }
 
-
-
-/*  content start */
+/*  main start */
 
 main {
-  width: 100%;
-  height: 60vh;
-  background-color: antiquewhite;
+  margin-top: 50px;
+  /* background-color: antiquewhite; */
 }
 
 main .container {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .container h2 {
+  margin-bottom: 20px;
+}
+main .container form {
+  text-align: center;
+  /* background-color: aqua; */
+}
+
+main .container form input[type="email"] {
+  max-width: 275px;
+  width: 100%;
+  padding: 5px;
+}
+
+main .container form #submit {
+  padding: 10px 25px;
+  margin: 20px;
+  text-transform: uppercase;
+  border: none;
+  background-color: #f1c40f;
+}
+/*  main end */
+
+/* seviceSection start  */
+
+.service .container {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-
-main .container form {
- width: 50vw;
- height: 30vh;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: cneter;
-  background-color: 80%;
-  background-color: aqua;
+.service .serviceSection {
+  margin: 20px;
+}
+.service .serviceSection .icon,
+.service .serviceSection .content {
+  float: left;
+  line-height: 1.6;
+  letter-spacing: 0.9px;
+}
+.service .serviceSection .icon {
+  width: 20%;
+  text-align: center;
+  color: #f1c40f;
+  font-size: 3em;
 }
 
-main .container form input {
+#video {
+  display: block;
+  width: 50%;
+  min-width: 300px;
+  max-width: 580px;
+  height: 315px;
+  margin: 0 auto;
+}
+
+.service .serviceSection .content {
+  width: 80%;
+}
+.service .serviceSection .content h3 {
+  padding-bottom: 10px;
+}
+
+/* seviceSection end  */
+/* priceSection start */
+.priceSection {
+  margin: 50px auto;
+}
+.priceSection .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.priceSection .container .priceSectionCard {
+  width: 32%;
+  min-width: 250px;
+  max-width: 320px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+}
+.priceSectionCard h3 {
+  text-transform: uppercase;
+  width: 100%;
+  padding: 12px;
+  background-color: #ddd;
+  border-radius: 5px 5px 0 0;
+}
+.priceSectionCard h4 {
+  padding: 10px 0 20px 0;
+}
+.priceSectionCard ul {
+  list-style: none;
   line-height: 1.6;
+  padding: 0 0 20px 0;
+}
+.priceSectionCard ul li {
+  line-height: 1.6;
+}
+.priceSectionCard .priceSelect {
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  font-size: 1em;
+  background-color: #f1c40f;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 1.2px;
+  border-radius: 3px;
+}
+.priceSectionCard .priceSelect:hover,
+main .container form #submit:hover {
+  cursor: pointer;
+  background-color: #ffce08;
+}
+
+/* priceSection end */
+/* foother */
+footer {
   padding: 10px;
-  margin-top: 10px;
+  text-align: center;
+  background-color: rgba(79, 79, 79, 0.8);
+}
+footer ul {
+  list-style: none;
+}
+footer ul li {
+  display: inline-block;
+  padding: 10px;
+  text-transform: capitalize;
+}
+footer li a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+footer li a:hover {
+  color: orange;
+}
+/**************************** media ****************************/
+
+/* phones */
+@media (max-width: 576px) {
+  header .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header .image-holder {
+    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
+    height: 50px;
+  }
+
+  nav {
+    width: 100%;
+    min-width: 80%;
+  }
+  header ul {
+    float: none;
+  }
+  .service .serviceSection .icon,
+  .service .serviceSection .content {
+    float: none;
+    margin: 5px auto;
+  }
+  .service .serviceSection {
+    text-align: center;
+  }
+}
+/* tablets */
+@media (max-width: 768px) {
+  .priceSection .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    min-width: 100px;
+  }
+  header ul {
+    text-align: center;
+  }
+  header ul li {
+    display: block;
+  }
+}
+/* labtops */
+@media (max-width: 992px) {
+}
+/* large screen pc */
+@media (max-width: 1200px) {
 }
